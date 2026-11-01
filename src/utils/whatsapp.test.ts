@@ -8,8 +8,9 @@ import {
 } from './whatsapp';
 
 test('normalizePhoneNumber removes spaces, pluses, dashes', () => {
+  assert.equal(normalizePhoneNumber('+91 8010928641'), '918010928641');
+  assert.equal(normalizePhoneNumber('8010928641'), '8010928641');
   assert.equal(normalizePhoneNumber('+91 98765-43210'), '919876543210');
-  assert.equal(normalizePhoneNumber('9876543210'), '9876543210');
 });
 
 test('createWhatsAppMessage formats message with item title', () => {

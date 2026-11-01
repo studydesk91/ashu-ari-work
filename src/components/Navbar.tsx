@@ -1,22 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, MessageCircle, Globe } from 'lucide-react';
+import { Menu, X, MessageCircle } from 'lucide-react';
 import { BUSINESS_CONFIG, TRANSLATIONS } from '../config/business';
 import { getWhatsAppUrl } from '../utils/whatsapp';
+import { BrandLogo } from './BrandLogo';
 
 interface NavbarProps {
-  language: 'en' | 'mr';
-  onLanguageToggle: () => void;
   activeSection: string;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({
-  language,
-  onLanguageToggle,
-  activeSection,
-}) => {
+export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const t = TRANSLATIONS[language];
+  const t = TRANSLATIONS.en;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,25 +50,25 @@ export const Navbar: React.FC<NavbarProps> = ({
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#FAF7F2]/95 backdrop-blur-md shadow-sm border-b border-[#EFE5DA] py-3'
-            : 'bg-[#FAF7F2] border-b border-[#FAF7F2] py-4 sm:py-5'
+            ? 'bg-[#FAF7F2]/95 backdrop-blur-md shadow-sm border-b border-[#EFE5DA] py-2.5 sm:py-3'
+            : 'bg-[#FAF7F2] border-b border-[#FAF7F2] py-3.5 sm:py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Top Bar Contract: 3 zones separated by gap-8 */}
-          <div className="flex items-center justify-between gap-8">
+          <div className="flex items-center justify-between gap-6 sm:gap-8">
             
-            {/* Zone 1: Single text element wordmark */}
+            {/* Zone 1: Brand Logo Lockup */}
             <a
               href="#home"
               onClick={(e) => handleNavClick(e, '#home')}
-              className="font-serif text-xl sm:text-2xl font-bold tracking-tight text-[#572B3A] hover:text-[#3F1D29] transition-colors whitespace-nowrap shrink-0"
+              className="inline-flex items-center whitespace-nowrap shrink-0 transition-opacity hover:opacity-95"
               aria-label="Ashwini Tupe - Handcrafted Textile Art Homepage"
             >
-              Ashwini Tupe
+              <BrandLogo className="h-9 sm:h-11" />
             </a>
 
-            {/* Zone 2: 4-6 concise single-line text navigation links */}
+            {/* Zone 2: Concise single-line text navigation links */}
             <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-[#615757]" aria-label="Main Navigation">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.id;
@@ -97,26 +92,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               })}
             </nav>
 
-            {/* Zone 3: Primary action + Language Switcher */}
+            {/* Zone 3: Primary Action */}
             <div className="flex items-center gap-3 shrink-0">
-              {/* Language Switcher button */}
-              <button
-                type="button"
-                onClick={onLanguageToggle}
-                className="flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-[#572B3A] bg-[#EFE5DA] hover:bg-[#EBCFD0] rounded transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C4A572]"
-                aria-label={language === 'en' ? "Switch to Marathi" : "Switch to English"}
-                title={language === 'en' ? "मराठी भाषेत वाचा" : "Read in English"}
-              >
-                <Globe className="w-3.5 h-3.5 text-[#572B3A]" />
-                <span>{language === 'en' ? 'मराठी' : 'English'}</span>
-              </button>
-
               {/* Primary WhatsApp Action */}
               <a
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-medium text-[#FAF7F2] bg-[#572B3A] hover:bg-[#3F1D29] rounded transition-colors shadow-sm whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C4A572]"
+                className="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-[#FAF7F2] bg-[#572B3A] hover:bg-[#3F1D29] rounded transition-colors shadow-sm whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C4A572]"
                 aria-label="Enquire on WhatsApp with Ashwini Tupe"
               >
                 <MessageCircle className="w-4 h-4 text-[#C4A572]" />
@@ -154,15 +137,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             <div>
               {/* Header inside mobile drawer */}
-              <div className="flex items-center justify-between pb-5 border-b border-[#EFE5DA]">
-                <div>
-                  <span className="font-serif text-lg font-bold text-[#572B3A]">
-                    Ashwini Tupe
-                  </span>
-                  <p className="text-[11px] text-[#615757] tracking-wider uppercase">
-                    Aari & Fabric Art · Pune
-                  </p>
-                </div>
+              <div className="flex items-center justify-between pb-4 border-b border-[#EFE5DA]">
+                <BrandLogo className="h-8" />
                 <button
                   type="button"
                   onClick={() => setMobileMenuOpen(false)}
@@ -190,18 +166,6 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Mobile Footer CTAs */}
             <div className="pt-6 border-t border-[#EFE5DA] space-y-3">
-              <button
-                type="button"
-                onClick={() => {
-                  onLanguageToggle();
-                  setMobileMenuOpen(false);
-                }}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-[#572B3A] bg-[#EFE5DA] hover:bg-[#EBCFD0] rounded-lg transition-colors"
-              >
-                <Globe className="w-4 h-4 text-[#572B3A]" />
-                <span>{language === 'en' ? 'मराठी आवृत्ती पहा (Switch to Marathi)' : 'Read in English'}</span>
-              </button>
-
               <a
                 href={whatsappHref}
                 target="_blank"
@@ -214,7 +178,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </a>
 
               <p className="text-center text-xs text-[#615757] pt-2">
-                Pune, Maharashtra, India
+                Pimple Gurav, Pune, Maharashtra, India
               </p>
             </div>
           </div>

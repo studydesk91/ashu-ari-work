@@ -122,7 +122,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ language }) => {
                     setPhoneNumber(e.target.value);
                     if (errors.phone) setErrors({ ...errors, phone: undefined });
                   }}
-                  placeholder="e.g. 9876543210 or +91 9876543210"
+                  placeholder="e.g. 8010928641 or +91 8010928641"
                   className={`w-full px-4 py-3 rounded-lg bg-[#FAF7F2] border text-sm text-[#292525] placeholder-[#615757]/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C4A572] transition-colors ${
                     errors.phone ? 'border-red-500 bg-red-50/20' : 'border-[#EFE5DA] focus:border-[#C4A572]'
                   }`}

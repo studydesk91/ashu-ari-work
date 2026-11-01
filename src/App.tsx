@@ -18,12 +18,7 @@ import { Footer } from './components/Footer';
 import { FloatingControls } from './components/FloatingControls';
 
 export default function App() {
-  const [language, setLanguage] = useState<'en' | 'mr'>('en');
   const [activeSection, setActiveSection] = useState('home');
-
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === 'en' ? 'mr' : 'en'));
-  };
 
   // Intersection observer to track active section for header
   useEffect(() => {
@@ -50,44 +45,40 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#FAF7F2] text-[#292525] flex flex-col font-sans selection:bg-[#EBCFD0] selection:text-[#572B3A]">
       {/* Premium Top Navigation Bar */}
-      <Navbar
-        language={language}
-        onLanguageToggle={toggleLanguage}
-        activeSection={activeSection}
-      />
+      <Navbar activeSection={activeSection} />
 
       {/* Main Content Area */}
       <main className="flex-1">
         {/* Editorial Hero */}
-        <Hero language={language} />
+        <Hero language="en" />
 
         {/* Introduction Section */}
-        <IntroductionSection language={language} />
+        <IntroductionSection language="en" />
 
         {/* Our Craft Services: Aari Embroidery & Fabric Painting */}
-        <CraftServicesSection language={language} />
+        <CraftServicesSection language="en" />
 
         {/* Featured Creations Gallery with Fullscreen Lightbox */}
-        <GallerySection language={language} />
+        <GallerySection language="en" />
 
         {/* Why Choose Handcrafted Art (4 Pillars) */}
-        <WhyHandmadeSection language={language} />
+        <WhyHandmadeSection language="en" />
 
         {/* Custom Order / Enquiry Process (01 - 04) */}
-        <ProcessSection language={language} />
+        <ProcessSection language="en" />
 
         {/* Meet the Artist: Ashwini Tupe */}
-        <AboutSection language={language} />
+        <AboutSection language="en" />
 
         {/* Customer Testimonials (Authentic Conditional Rendering) */}
-        <TestimonialsSection language={language} />
+        <TestimonialsSection language="en" />
 
         {/* Contact / WhatsApp Enquiry Form */}
-        <ContactSection language={language} />
+        <ContactSection language="en" />
       </main>
 
       {/* Luxury Dark Burgundy Footer */}
-      <Footer language={language} />
+      <Footer />
 
       {/* Floating WhatsApp and Scroll-to-Top CTAs */}
       <FloatingControls />

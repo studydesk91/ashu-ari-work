@@ -47,20 +47,21 @@ export const BUSINESS_CONFIG = {
   tagline: "Every Thread Tells a Story.",
   taglineMarathi: "प्रत्येक धाग्यात विणलेली एक सुंदर कला.",
   
+  // Official Logo asset
+  logoUrl: "/assets/aistudio/image_4df63091.png",
+
   // Location
-  locationCity: "Pune",
+  locationCity: "Pimple Gurav, Pune",
   locationState: "Maharashtra",
   locationCountry: "India",
-  locationFull: "Pune, Maharashtra, India",
-  googleMapsUrl: "https://www.google.com/maps/place/Pune,+Maharashtra",
+  locationFull: "Pimple Gurav, Pune, Maharashtra, India",
+  googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Pimple+Gurav,+Pune",
   
-  // Contact & Social Details (Edit these to your actual details)
-  // For WhatsApp: Enter your 10-digit number or with country code, e.g. "+91 98765 43210"
-  whatsappNumber: "+91 98765 43210", 
+  // Contact & Social Details
+  whatsappNumber: "+91 8010928641", 
   
-  // Set to null or empty string "" if you want to hide Instagram or Email
-  instagramHandle: "ashwini_aari_art",
-  instagramUrl: "https://instagram.com/ashwini_aari_art",
+  instagramHandle: "ashus_house_of_aari_28",
+  instagramUrl: "https://instagram.com/ashus_house_of_aari_28",
   emailAddress: "ashwini.tupe.art@gmail.com",
   
   // Demo Mode Banner
@@ -243,9 +244,9 @@ export const TRANSLATIONS = {
       enquireButton: "Enquire on WhatsApp",
     },
     hero: {
-      eyebrow: "HANDCRAFTED IN PUNE, INDIA",
+      eyebrow: "HANDCRAFTED IN PIMPLE GURAV, PUNE",
       title: "Artistry Woven Into Every Thread.",
-      subtitle: "Discover exquisite Aari embroidery and hand-painted fabric creations, thoughtfully crafted by Ashwini Tupe in Pune.",
+      subtitle: "Discover exquisite Aari embroidery and hand-painted fabric creations, thoughtfully crafted by Ashwini Tupe in Pimple Gurav, Pune.",
       exploreBtn: "Explore Our Creations",
       whatsappBtn: "Enquire on WhatsApp",
     },
@@ -253,7 +254,7 @@ export const TRANSLATIONS = {
       eyebrow: "THE ART OF HANDCRAFTED BEAUTY",
       heading: "Where Tradition Meets Imagination.",
       p1: "In a world of mass-produced garments, handmade textile art carries an irreplaceable warmth. Every stitch of Aari embroidery requires hours of patient hand coordination, while each brushstroke on fabric breathes life into personal memories.",
-      p2: "Based in Pune, Ashwini Tupe specializes in bespoke bridal blouse embroidery, traditional motifs, and custom hand-painted sarees. Every piece is an intimate collaboration between your vision and timeless artisan craftsmanship.",
+      p2: "Based in Pimple Gurav, Pune, Ashwini Tupe specializes in bespoke bridal blouse embroidery, traditional motifs, and custom hand-painted sarees. Every piece is an intimate collaboration between your vision and timeless artisan craftsmanship.",
       aboutLink: "Meet the Artist",
     },
     craft: {
@@ -290,10 +291,10 @@ export const TRANSLATIONS = {
     about: {
       eyebrow: "THE ARTIST'S STORY",
       heading: "Meet the Artist Behind the Craft",
-      p1: "Hello, I am Ashwini Tupe, a textile artist based in Pune, Maharashtra. My passion lies at the intersection of traditional needlecraft and expressive fabric art.",
+      p1: "Hello, I am Ashwini Tupe, a textile artist based in Pimple Gurav, Pune. My passion lies at the intersection of traditional needlecraft and expressive fabric art.",
       p2: "Aari embroidery allows me to sculpt tactile luxury through metallic threads, pearls, and kundan stones. Simultaneously, fabric painting gives me the freedom to translate natural florals and delicate botanical poetry onto flowing silk and organza.",
       p3: "Whether preparing a bridal blouse for your wedding day or personalizing an heirloom saree, I look forward to bringing your dream design to life.",
-      locationNote: "Studio based in Pune, Maharashtra",
+      locationNote: "Studio based in Pimple Gurav, Pune",
       whatsappCta: "Message Ashwini directly on WhatsApp",
     },
     process: {
@@ -314,13 +315,13 @@ export const TRANSLATIONS = {
       submitBtn: "Send Enquiry via WhatsApp",
       directWhatsapp: "Direct WhatsApp",
       locationHeading: "Location",
-      locationPune: "Pune, Maharashtra, India",
-      openInMaps: "View Pune on Google Maps",
+      locationPune: "Pimple Gurav, Pune, Maharashtra, India",
+      openInMaps: "View Pimple Gurav, Pune on Google Maps",
       validationName: "Please enter your name.",
       validationPhone: "Please enter a valid 10-digit mobile number.",
     },
     footer: {
-      craftedWith: "Handcrafted with devotion in Pune, Maharashtra.",
+      craftedWith: "Handcrafted with devotion in Pimple Gurav, Pune.",
       rights: "All rights reserved.",
       demoDisclaimer: "Sample portfolio works shown for demonstration purposes. Genuine custom orders crafted uniquely upon request.",
     },

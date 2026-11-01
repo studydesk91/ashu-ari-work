@@ -2,14 +2,11 @@ import React from 'react';
 import { MessageCircle, Instagram, MapPin, ArrowUp } from 'lucide-react';
 import { BUSINESS_CONFIG, TRANSLATIONS } from '../config/business';
 import { getWhatsAppUrl } from '../utils/whatsapp';
+import { BrandLogo } from './BrandLogo';
 
-interface FooterProps {
-  language: 'en' | 'mr';
-}
-
-export const Footer: React.FC<FooterProps> = ({ language }) => {
+export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const t = TRANSLATIONS[language];
+  const t = TRANSLATIONS.en;
 
   const whatsappHref = getWhatsAppUrl({
     phoneNumber: BUSINESS_CONFIG.whatsappNumber,
@@ -30,14 +27,10 @@ export const Footer: React.FC<FooterProps> = ({ language }) => {
           
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-4">
-            <span className="font-serif text-2xl font-bold tracking-tight text-[#FAF7F2]">
-              Ashwini Tupe
-            </span>
-            <p className="text-xs uppercase tracking-widest text-[#C4A572] font-medium">
-              Aari & Fabric Art · Pune
-            </p>
-            <p className="font-serif italic text-sm text-[#EBCFD0] max-w-sm">
-              "{language === 'mr' ? BUSINESS_CONFIG.taglineMarathi : BUSINESS_CONFIG.tagline}"
+            <BrandLogo variant="dark" />
+            
+            <p className="font-serif italic text-sm text-[#EBCFD0] max-w-sm pt-2">
+              "{BUSINESS_CONFIG.tagline}"
             </p>
             <p className="text-xs text-[#EBCFD0]/80 leading-relaxed max-w-sm">
               Dedicated to celebrating the heritage of Indian handcrafted needlework and expressive textile art for weddings, festivals, and discerning wardrobes.
